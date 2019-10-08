@@ -1,17 +1,22 @@
+{% load static %}
 <html>
     <head>
-        <title>Wannasbird blog</title>
+        <title>Blog Wannaasbird</title>
+        <link rel="stylesheet" href="{% static '/css/blog.css' %}">
     </head>
-    <body>
-        <div>
-            <h1><a href="/">Wannasbird blog</a></h1>
-        </div>
+        <body>
+            <nav class="menu">
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">Portfolio</a>
+                <a href="#">About</a>
+            </nav>
             {% for post in posts %}
             <div>
-                <p>published: {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
+                <h2>{{ post.title }}</h2>
+                <small>Published: {{ post.published_date }}</small>
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
             {% endfor %}
-    </body>
+        </body>
 </html>
