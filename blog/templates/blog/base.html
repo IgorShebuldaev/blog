@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>Blog Wannaasbird</title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <h1><a href="#"></a>Blog Wannaasbird</h1>
+                <nav class="links">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="main">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
