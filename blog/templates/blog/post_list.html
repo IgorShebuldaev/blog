@@ -2,21 +2,33 @@
 <html>
     <head>
         <title>Blog Wannaasbird</title>
-        <link rel="stylesheet" href="{% static '/css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
-        <body>
-            <nav class="menu">
-                <a href="#">Home</a>
-                <a href="#">Blog</a>
-                <a href="#">Portfolio</a>
-                <a href="#">About</a>
-            </nav>
-            {% for post in posts %}
-            <div>
-                <h2>{{ post.title }}</h2>
-                <small>Published: {{ post.published_date }}</small>
-                <p>{{ post.text|linebreaksbr }}</p>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <h1><a href="#"></a>Blog Wannaasbird</h1>
+                <nav class="links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="main">
+                {% for post in posts %}
+                <article class="post">
+                    <header>
+                        <div class="title">
+                            <h2><a href="#">{{ post.title }}</a></h2>
+                            <time>Published: {{ post.published_date }}</time>
+                        </div>
+                    </header>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </article>
+                {% endfor %}   
             </div>
-            {% endfor %}
-        </body>
+        </div>
+    </body>
 </html>
