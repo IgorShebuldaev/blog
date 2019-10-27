@@ -18,6 +18,9 @@
                         <li><a href="/about">About</a></li>
                     </ul>
                 </nav>
+                {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}"><h1>Add post</h1></a>
+                {% endif %}
             </header>
             <div class="main">
                 {% block content %}
